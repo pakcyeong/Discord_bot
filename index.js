@@ -1,7 +1,7 @@
 const { getData } = require("./webParse.js");
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const Token = 'OTQ4MDA4MzQ2ODUyNjYzMzE2.Yh1jkw.fVw9Zerm-mZFPYFcQ3Pse6AU4CY';
+const Token = 'Token-Data';
 const loaUrl = 'https://lostark.game.onstove.com/Profile/Character/';
 const prefix = ':';
 
