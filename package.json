@@ -1,29 +1,18 @@
 {
-  "name": "discord_bot",
+  "name": "discord",
   "version": "1.0.0",
-  "description": "discord bot for lostark",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pakcyeong/Discord_bot.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pakcyeong/Discord_bot/issues"
-  },
-  "homepage": "https://github.com/pakcyeong/Discord_bot#readme",
   "dependencies": {
-    "axios": "^0.26.0",
-    "body-parser": "^1.19.2",
+    "axios": "^0.26.1",
     "cheerio": "^1.0.0-rc.10",
-    "discord": "^0.8.2",
     "discord.js": "^12.5.3",
-    "express": "^4.17.3",
-    "node-cron": "^3.0.0"
-  },
-  "keywords": []
+    "fs": "^0.0.1-security"
+  }
 }
