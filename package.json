@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/pakcyeong/Discord_bot.git"
   },
-  "keywords": ["discordbot","discord","javascript"],
+  "keywords": [
+    "discordbot",
+    "discord",
+    "javascript"
+  ],
   "author": "pak",
   "license": "ISC",
   "bugs": {
@@ -22,5 +26,8 @@
     "cheerio": "^1.0.0-rc.10",
     "discord.js": "^12.5.3",
     "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
   }
 }
