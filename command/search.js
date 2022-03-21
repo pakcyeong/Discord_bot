@@ -1,4 +1,3 @@
-const Discord = require('discord.js');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require('fs');
@@ -15,7 +14,7 @@ var usrInfo = {
 
 module.exports = {
 
-    write: async function(id){
+    write : async (id) => {
         
         const usrId = encodeURI(id);
         const url = "https://lostark.game.onstove.com/Profile/Character/";
@@ -86,42 +85,6 @@ module.exports = {
             const dataBuffer = new fs.readFileSync('./json/userInfo.json');
             var dataJSON = JSON.stringify(usrInfo);
             new fs.writeFileSync('./json/userInfo.json', dataJSON);
-
         });
-    },
-
-    read:() => {
-
-        const result = fs.readFileSync('./json/userInfo.json', 'utf8');
-        return result;
-    },
-
-    embed: async function(dataObj){
-        const usr = JSON.parse(dataObj);
-        const dataObjEmbed = new MessageEmbed()
-        .setColor('#0099ff')
-        .setTitle(dataObj.name)
-        .setThumbnail(dataObj.icon)
-        .addFields(
-            { name: '기본 정보', value: `\`서버\`: ${dataObj.server}\n\`클래스\`: ${dataObj.class}\n\`칭호\`: ${dataObj.title}\n\`길드\`: ${dataObj.guild}\n\`영지\`: ${dataObj.wisdom}`, inline: true },
-            { name: '레벨 정보', value: `\`전투 레벨\`: ${dataObj.bttLv}\n\`원정대 레벨\`: ${dataObj.expLv}\n\`아이템 레벨\`: ${dataObj.itmLv}\n\`영지 레벨\`: ${dataObj.wisLv} `, inline: true },
-            { name: '기본 특성', value: `\`공격력\`: ${dataObj.attk}\n\`생명력\`: ${dataObj.hp}`, inline: true },
-            { name: '전투 특성', value: `\`치명\`: ${dataObj.crit}\n\`특화\`: ${dataObj.spec}\n\`제압\`: ${dataObj.subd}\n\`신속\`: ${dataObj.agil}\n\`인내\`: ${dataObj.endu}\n\`숙련\`: ${dataObj.prof}`, inline: true }
-        )
-        dataObjEmbed.addField('성향', `\`지성\`: ${dataObj.inte}\n\`담력\`: ${dataObj.brav}\n\`매력\`: ${dataObj.char}\n\`친절\`: ${dataObj.kind}`, true)
-
-        channel.send({ embeds: [dataObjEmbed] });
-    },
-
-    run: async function(id){
-        try {
-            const s = await this.write(id);
-            const r = await this.read(s);
-            this.embed(r);
-        } catch (err) {
-            console.log('error');
-            return;
-        }
     }
-
 }
