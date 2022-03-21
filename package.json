@@ -1,7 +1,7 @@
 {
   "name": "discord_bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "discord bot for lostark user",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/pakcyeong/Discord_bot.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["discordbot","discord","javascript"],
+  "author": "pak",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pakcyeong/Discord_bot/issues"

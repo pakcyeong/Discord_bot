@@ -1,30 +1,95 @@
 const { MessageEmbed } = require('discord.js');
-
+const url = "https://lostark.game.onstove.com/Profile/Character/";
 class em extends MessageEmbed{
 
     constructor(){
         super()
     }
 
+    help = async () => {
+
+        // const helpEmbed = new MessageEmbed()
+
+        //     //.setThumbnail('https://assets.maxroll.gg/wordpress/LA_Mokko_Seed.png')
+        //     .setColor('#0099ff')
+        //     .setTitle('로아 봇 명령어')
+        //     .setDescription('로아 봇이 제공하는 명령어 도움말입니다.')
+        //     .setThumbnail('https://assets.maxroll.gg/wordpress/LA_Mokko_Seed.png')
+        //     .addFields(
+        //         { 
+        //             name: '기본 제공 명령어', value: 
+        //             'Some value here'
+        //         },
+        //         { 
+        //             name: '지원 예정 명령어', value: 
+        //             'Some value here'
+        //         },
+        //     )
+        //     .setTimestamp()
+        //     .setFooter('Made by 가렌조아');
+
+        const helpEmbed = '\`\`\` < 로아 봇 명령어 > \`\`\`\`\`\`🎮 명령 식별자 : !\`\`\`\`\`\`🎮 기본 제공 명령어 \n 도움, 검색 닉네임\`\`\`\`\`\`🎮 지원 예정 명령어 \n 크리스탈, 인벤 닉네임, 도전, 수집품 닉네임, 샵 물건, !업뎃\`\`\`'
+            
+        return helpEmbed;
+    }
+
     fSearch = async (input) => {
-        const d = input;
+
         const searchEmbed = new MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('Some title')
-            .setURL('https://discord.js.org/')
-            .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-            .setDescription('Some description here')
-            .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+            .setTitle(input.usrData.name)
+            .setThumbnail(input.usrData.classIco)
+            .setURL(url+input.usrData.name)
             .addFields(
-                { name: 'Regular field title', value: 'Some value here' },
-                { name: '\u200B', value: '\u200B' },
-                { name: 'Inline field title', value: 'Some value here', inline: true },
-                { name: 'Inline field title', value: 'Some value here', inline: true },
+                { 
+                    name: '기본정보', value: 
+                    '\`서버\` : ' + input.usrData.server + '\n' +
+                    '\`클래스\` : ' + input.usrData.class + '\n' +
+                    '\`길드\` : ' + input.usrData.guild + '\n' +
+                    '\`영지\` : ' + input.usrData.wisdom + '\n' +
+                    '\`칭호\` : ' + input.usrData.title
+                    , inline: true 
+                },
+                { 
+                    name: '레벨정보', value: 
+                    '\`전투 레벨\` : ' + input.usrLv.bttLv + '\n' +
+                    '\`원정대 레벨\` : ' + input.usrLv.expLv + '\n' +
+                    '\`아이템 레벨\` : ' + input.usrLv.itmLv + '\n' +
+                    '\`영지 레벨\` : ' + input.usrLv.itmLv
+                    , inline: true 
+                },
+                { 
+                    name: '기본특성', value: 
+                    '\`공격력\` : ' + input.usrStat.usrAttk + '\n' +
+                    '\`생명력\` : ' + input.usrStat.usrHp
+                    , inline: true 
+                },
+                { 
+                    name: '전투특성', value: 
+                    '\`치명\` : ' + input.usrStat.stat[0] + '\n' +
+                    '\`특화\` : ' + input.usrStat.stat[1] + '\n' +
+                    '\`제압\` : ' + input.usrStat.stat[2] + '\n' +
+                    '\`신속\` : ' + input.usrStat.stat[3] + '\n' +
+                    '\`인내\` : ' + input.usrStat.stat[4] + '\n' +
+                    '\`숙련\` : ' + input.usrStat.stat[5]
+                    , inline: true 
+                },
+                { 
+                    name: '성향', value: 
+                    '\`지성\` : ' + input.usrStat.tend[0] + '\n' +
+                    '\`담력\` : ' + input.usrStat.tend[1] + '\n' +
+                    '\`매력\` : ' + input.usrStat.tend[2] + '\n' +
+                    '\`친절\` : ' + input.usrStat.tend[3]
+                    , inline: true 
+                },
+                { 
+                    name: '각인효과', value: 
+                    input.usrEngr.replace(/\[object Object\]/,'')
+                    , inline: true 
+                },
             )
-            .addField('Inline field title', 'Some value here', true)
-            .setImage('https://i.imgur.com/wSTFkRM.png')
             .setTimestamp()
-            .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+            .setFooter('Made by 가렌조아');
         
         return searchEmbed;
     }

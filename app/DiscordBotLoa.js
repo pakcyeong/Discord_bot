@@ -8,9 +8,14 @@
 // const search = require('../command/search');
 const { Client } = require('discord.js');
 const c = require('./cmd');
-const prefix = ':';
+const prefix = '!';
 
 class DiscordBotLoa extends Client {
+
+    /*
+    *   DiscordBotLoa
+    *   main
+    */
 
     constructor(props){
         super(props)
@@ -29,10 +34,17 @@ class DiscordBotLoa extends Client {
             
             let args = message.content.substring(prefix.length).split(" ");
 
-            c.command(args);
+            c.command(args)
+                .then((value) => {
+                    message.channel.send(value)
+                })
+                .catch((reason) => {
+                    message.channel.send(reason)
+                });
+
         });
 
-        this.login(`TOKEN HERE`);
+        this.login('OTQ4MDA4MzQ2ODUyNjYzMzE2.Yh1jkw.Z0FJ120Vmt-B6FIDSv3AQOSAQbk');
     }
 
 }
