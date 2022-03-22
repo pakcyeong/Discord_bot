@@ -18,7 +18,7 @@ module.exports = {
 
     command: async (input) => {
         switch(input[0]){
-            case cmd.command[0]: //도움
+            case cmd.command[0]: //도움 complete
                 return emm.help();
                 break;
             /*case cmd.command[1]: //도전

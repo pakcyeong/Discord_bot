@@ -24,8 +24,7 @@ class sc {
                 usrStat:{
                     stat:[],
                     tend:[]
-                },
-                usrEngr:{}
+                }
             }
 
             axios.get( url + usrId ).then((res, err) => {
@@ -86,8 +85,10 @@ class sc {
                         usrinfo.usrStat.stat[i] = $(this).find('span').eq(1).text()
                     }); //특성 data
                 }
-    
+                
+
                 for(var indx = 0, i=0;i<=1;i++){
+                    if($usrEngv.eq(0).children('li').eq(0).find('span').text() == ''){ break; }
                     for(var j=0;j<=3;j++){
                         $usrEngv.eq(i).children('li').eq(j).each(function(index,elem){
                             usrinfo.usrEngr += $(this).find('span').text() + '\n';
@@ -95,6 +96,7 @@ class sc {
                         });
                     }
                 } //각인 data
+
 
                 var tmpTnd = $usrTend.eq(10).html().match(/value: \[\d+(,)\n\s+\d+(,)\n\s+\d+(,)\n\s+\d+\]/);
 

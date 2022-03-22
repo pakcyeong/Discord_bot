@@ -8,26 +8,6 @@ class em extends MessageEmbed{
 
     help = async () => {
 
-        // const helpEmbed = new MessageEmbed()
-
-        //     //.setThumbnail('https://assets.maxroll.gg/wordpress/LA_Mokko_Seed.png')
-        //     .setColor('#0099ff')
-        //     .setTitle('로아 봇 명령어')
-        //     .setDescription('로아 봇이 제공하는 명령어 도움말입니다.')
-        //     .setThumbnail('https://assets.maxroll.gg/wordpress/LA_Mokko_Seed.png')
-        //     .addFields(
-        //         { 
-        //             name: '기본 제공 명령어', value: 
-        //             'Some value here'
-        //         },
-        //         { 
-        //             name: '지원 예정 명령어', value: 
-        //             'Some value here'
-        //         },
-        //     )
-        //     .setTimestamp()
-        //     .setFooter('Made by 가렌조아');
-
         const helpEmbed = '\`\`\` < 로아 봇 명령어 > \`\`\`\`\`\`🎮 명령 식별자 : !\`\`\`\`\`\`🎮 기본 제공 명령어 \n 도움, 검색 닉네임\`\`\`\`\`\`🎮 지원 예정 명령어 \n 크리스탈, 인벤 닉네임, 도전, 수집품 닉네임, 샵 물건, !업뎃\`\`\`'
             
         return helpEmbed;
@@ -82,14 +62,14 @@ class em extends MessageEmbed{
                     '\`친절\` : ' + input.usrStat.tend[3]
                     , inline: true 
                 },
-                { 
-                    name: '각인효과', value: 
-                    input.usrEngr.replace(/\[object Object\]/,'')
-                    , inline: true 
-                },
             )
             .setTimestamp()
             .setFooter('Made by 가렌조아');
+
+            if(input.usrEngr != undefined){
+                searchEmbed.addField( '각인효과', input.usrEngr.replace(/undefined/,''),true )
+            };
+            
         
         return searchEmbed;
     }
