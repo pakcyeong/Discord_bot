@@ -28,7 +28,7 @@ module.exports = {
             //    break;
             case cmd.command[3]: //크리스탈
                 return ccr.crystal()
-                            .then(value => emm.crys(value))
+                            .then(value => emm.crys(value.data))
                             .catch()
                             .then();
                 break;
