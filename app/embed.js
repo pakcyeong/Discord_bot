@@ -55,7 +55,7 @@ class em extends MessageEmbed{
                     '\`전투 레벨\` : ' + input.usrLv.bttLv + '\n' +
                     '\`원정대 레벨\` : ' + input.usrLv.expLv + '\n' +
                     '\`아이템 레벨\` : ' + input.usrLv.itmLv + '\n' +
-                    '\`영지 레벨\` : ' + input.usrLv.itmLv
+                    '\`영지 레벨\` : ' + input.usrLv.wisLv
                     , inline: true 
                 },
                 { 
