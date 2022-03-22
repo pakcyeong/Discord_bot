@@ -9,7 +9,7 @@ class em extends MessageEmbed{
 
     help = async () => {
 
-        const helpEmbed = '\`\`\` < 로아 봇 명령어 > \`\`\`\`\`\`🎮 명령 식별자 : !\`\`\`\`\`\`🎮 기본 제공 명령어 \n 도움, 검색 닉네임\`\`\`\`\`\`🎮 지원 예정 명령어 \n 크리스탈, 인벤 닉네임, 도전, 수집품 닉네임, 샵 물건, 업뎃\`\`\`'
+        const helpEmbed = '\`\`\` < 로아 봇 명령어 > \`\`\`\`\`\`🎮 명령 식별자 : !\`\`\`\`\`\`🎮 기본 제공 명령어 \n 도움, 검색 닉네임, 크리스탈, 모험섬\`\`\`\`\`\`🎮 지원 예정 명령어 \n 인벤 닉네임, 도전, 수집품 닉네임, 샵 물건, 업뎃\`\`\`'
             
         return helpEmbed;
     }
@@ -69,8 +69,10 @@ class em extends MessageEmbed{
             .setFooter('Made by 가렌조아');
 
             if(input.usrEngr != undefined){
-                searchEmbed.addField( '각인효과', input.usrEngr.replace(/undefined/,''),true )
-            };
+                searchEmbed.addField( '각인효과', input.usrEngr.replace(/undefined/,''), true )
+            } else {
+                searchEmbed.addField( '각인효과', '-', true )
+            }
             
         
         return searchEmbed;
@@ -80,7 +82,7 @@ class em extends MessageEmbed{
 
         const crystalEmbed = new MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('시세')
+            .setTitle('크리스탈 시세')
             .addFields(
                 { 
                     name: '구매가', value: 
