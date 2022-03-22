@@ -95,6 +95,25 @@ class em extends MessageEmbed{
 
         return crystalEmbed;
     }
+
+    islnd = async (input) => {
+
+        const islandEmbed = new MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle('오늘의 모험섬')
+            .addFields(
+                { 
+                    name: input.IslandDate, value: 
+                    input.Island[0].Name + ': \`'+ input.Island[0].Reward +'\`' + '\n' +
+                    input.Island[1].Name + ': \`'+ input.Island[1].Reward +'\`' + '\n' +
+                    input.Island[2].Name + ': \`'+ input.Island[2].Reward +'\`'
+                },
+            )
+            .setFooter('Made by 가렌조아');
+
+        return islandEmbed;
+
+    }
 }
 
 module.exports = { em };

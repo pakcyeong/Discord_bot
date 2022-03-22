@@ -1,12 +1,14 @@
 const Discord = require('discord.js');
 const { sc } = require('../command/search');
 const { cr } = require('../command/crystal');
+const { islnd } = require('../command/island');
 const { em } = require('./embed');
 const fs = require('fs');
 
 const sch = new sc();
 const emm = new em();
 const crr = new cr();
+const isl = new islnd();
 
 
 const cmd = {
@@ -32,8 +34,12 @@ module.exports = {
                             .catch()
                             .then();
                 break;
-            //case cmd.command[4]: //모험섬
-            //    break;      
+            case cmd.command[4]: //모험섬
+                return isl.island()
+                            .then(value => emm.islnd(value.data))
+                            .catch()
+                            .then();
+                break;      
             case cmd.command[5]: //검색 complete
                 return sch.search(input[1])
                             .then(value => emm.fSearch(value))
