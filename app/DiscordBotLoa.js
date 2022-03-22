@@ -44,7 +44,7 @@ class DiscordBotLoa extends Client {
 
         });
 
-        this.login(process.env.TOKEN, () => { console.log; });
+        this.login(process.env.TOKEN);
     }
 
 }
