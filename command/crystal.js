@@ -11,17 +11,12 @@ class cr {
 
     crystal = async () => {
         return new Promise(function(resolve, reject){
-            axios.get('http://152.70.248.4:5000/crystal/',function(res){
-                if(res){ resolve(res)}
+            resolve(axios.get('http://152.70.248.4:5000/crystal/',function(res){
+                if(res){ }
                 else{ reject('크리스탈 시세 조회 중 문제가 발생하였습니다. 잠시 후, 다시 입력해주세요') }
-            });
-        })
-        // axios.get('http://152.70.248.4:5000/crystal/')
-        //     .then(function(res){
-        //         return res.data;
-        //     })      
+            }));
+        }) 
     }
-
 }
 
 module.exports = { cr };
