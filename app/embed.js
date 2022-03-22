@@ -76,10 +76,25 @@ class em extends MessageEmbed{
         return searchEmbed;
     }
 
-    crys = async () => {
-        //pass
-    }
+    crys = async (input) => {
 
+        const crystalEmbed = new MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle('시세')
+            .addFields(
+                { 
+                    name: '구매가', value: 
+                    '\`' + input.Buy + '\`' + ' 골드'
+                },
+                { 
+                    name: '판매가', value: 
+                    '\`' + input.Sell + '\`' + ' 골드'
+                },
+            )
+            .setFooter('Made by 가렌조아');
+
+        return crystalEmbed;
+    }
 }
 
 module.exports = { em };
