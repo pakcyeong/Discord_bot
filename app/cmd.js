@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const { sc } = require('../command/search');
 const { cr } = require('../command/crystal');
 const { islnd } = require('../command/island');
+const { stf } = require('../command/stuff');
 const { em } = require('./embed');
 const fs = require('fs');
 
@@ -9,6 +10,7 @@ const sch = new sc();
 const emm = new em();
 const crr = new cr();
 const isl = new islnd();
+const stff =new stf();
 
 
 const cmd = {
@@ -42,14 +44,18 @@ module.exports = {
                 break;      
             case cmd.command[5]: //검색 complete
                 return sch.search(input[1])
-                            .then(value => emm.fSearch(value))
+                            .then(value  => emm.fSearch(value, input[1]))
                             .catch()
                             .then();
                 break;
             //case cmd.command[6]: //샵
             //    break;
-            //case cmd.command[7]: //비매
-            //    break;
+            case cmd.command[7]: //비매
+                return stff.stuff(input[1])
+                            .then(value => emm.stuf(value.data))
+                            .catch()
+                            .then();
+                break;
             //case cmd.command[8]: //업뎃
             //    break;
             default: //명령어가 아닌 경우

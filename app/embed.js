@@ -104,9 +104,9 @@ class em extends MessageEmbed{
             .addFields(
                 { 
                     name: input.IslandDate, value: 
-                    input.Island[0].Name + ': \`'+ input.Island[0].Reward +'\`' + '\n' +
-                    input.Island[1].Name + ': \`'+ input.Island[1].Reward +'\`' + '\n' +
-                    input.Island[2].Name + ': \`'+ input.Island[2].Reward +'\`'
+                    input.Island[0].Name + ' : \`'+ input.Island[0].Reward +'\`' + '\n' +
+                    input.Island[1].Name + ' : \`'+ input.Island[1].Reward +'\`' + '\n' +
+                    input.Island[2].Name + ' : \`'+ input.Island[2].Reward +'\`'
                 },
             )
             .setFooter('Made by 가렌조아');
@@ -114,6 +114,24 @@ class em extends MessageEmbed{
         return islandEmbed;
 
     }
+
+    stuf = async (input, usrId) => {
+
+        const stufEmbed = new MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle('로아 인벤 사사게 검색 \`' + usrId + '\`')
+            .setURL(input.SasaUrl)
+            .addFields(
+                { 
+                    name: '사사게 검색 정보(최근 1만 게시글)', value: 
+                    input.SasaList
+                },
+            )
+            .setFooter('Made by 가렌조아');
+        
+        return stufEmbed;
+    }
+
 }
 
 module.exports = { em };
