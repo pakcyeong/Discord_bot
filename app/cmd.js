@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { sc } = require('../command/search');
 const { cr } = require('../command/crystal');
 const { islnd } = require('../command/island');
-const { stf } = require('../command/stuff');
+//const { stf } = require('../command/stuff');
 const { em } = require('./embed');
 const fs = require('fs');
 
@@ -10,7 +10,7 @@ const sch = new sc();
 const emm = new em();
 const crr = new cr();
 const isl = new islnd();
-const stff =new stf();
+//const stff =new stf();
 
 
 const cmd = {
