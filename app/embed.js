@@ -19,6 +19,7 @@ class em extends MessageEmbed{
         const searchEmbed = new MessageEmbed()
             .setColor('#0099ff')
             .setTitle(input.usrData.name)
+            .setDescription('자세한 정보는 닉네임을 클릭하세요')
             .setThumbnail(input.usrData.classIco)
             .setURL(url+input.usrData.name)
             .addFields(
