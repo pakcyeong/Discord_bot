@@ -115,22 +115,22 @@ class em extends MessageEmbed{
 
     }
 
-    stuf = async (input, usrId) => {
+    // stuf = async (input, usrId) => {
 
-        const stufEmbed = new MessageEmbed()
-            .setColor('#0099ff')
-            .setTitle('로아 인벤 사사게 검색 \`' + usrId + '\`')
-            .setURL(input.SasaUrl)
-            .addFields(
-                { 
-                    name: '사사게 검색 정보(최근 1만 게시글)', value: 
-                    input.SasaList
-                },
-            )
-            .setFooter('Made by 가렌조아');
+    //     const stufEmbed = new MessageEmbed()
+    //         .setColor('#0099ff')
+    //         .setTitle('로아 인벤 사사게 검색')
+    //         .setURL(input.SasaUrl)
+    //         .addFields(
+    //             { 
+    //                 name: '사사게 검색 정보(최근 1만 게시글)', value: 
+    //                 input.SasaList
+    //             },
+    //         )
+    //         .setFooter('Made by 가렌조아');
         
-        return stufEmbed;
-    }
+    //     return stufEmbed;
+    // }
 
 }
 
