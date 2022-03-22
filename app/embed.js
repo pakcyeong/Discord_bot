@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js');
+const fs = require('fs');
 const url = "https://lostark.game.onstove.com/Profile/Character/";
 class em extends MessageEmbed{
 
@@ -8,7 +9,7 @@ class em extends MessageEmbed{
 
     help = async () => {
 
-        const helpEmbed = '\`\`\` < 로아 봇 명령어 > \`\`\`\`\`\`🎮 명령 식별자 : !\`\`\`\`\`\`🎮 기본 제공 명령어 \n 도움, 검색 닉네임\`\`\`\`\`\`🎮 지원 예정 명령어 \n 크리스탈, 인벤 닉네임, 도전, 수집품 닉네임, 샵 물건, !업뎃\`\`\`'
+        const helpEmbed = '\`\`\` < 로아 봇 명령어 > \`\`\`\`\`\`🎮 명령 식별자 : !\`\`\`\`\`\`🎮 기본 제공 명령어 \n 도움, 검색 닉네임\`\`\`\`\`\`🎮 지원 예정 명령어 \n 크리스탈, 인벤 닉네임, 도전, 수집품 닉네임, 샵 물건, 업뎃\`\`\`'
             
         return helpEmbed;
     }
@@ -74,7 +75,9 @@ class em extends MessageEmbed{
         return searchEmbed;
     }
 
-
+    crys = async () => {
+        //pass
+    }
 
 }
 

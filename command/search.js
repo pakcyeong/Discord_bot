@@ -41,9 +41,6 @@ class sc {
                 if($error.eq(2).text() === '돌아가기'){ reject('없는 이름이거나 잘못된 이름입니다.') }
                 else{ }
 
-                //console.log($error.eq(2).text());
-                
-
                 $usrData.each(function(){
 
                     usrinfo.usrData = {
@@ -113,14 +110,7 @@ class sc {
                     } //성향 data
 
                 }
-                    
-                //if(false) { 
-                 //   reject()
-                //}
-
-                //else { 
                     resolve(usrinfo) 
-                //}
     
             })
         })
@@ -128,3 +118,9 @@ class sc {
 }
 
 module.exports = { sc }
+
+/*
+*   작동 속도 너무 느림, 
+*
+*
+*/
