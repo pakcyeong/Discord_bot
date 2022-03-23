@@ -111,12 +111,6 @@ class em extends MessageEmbed{
                     input.Island[2].Name + ' : \`'+ input.Island[2].Reward +'\`'
                 },
             )
-            
-            .addField('Inline field title', 'Some value here', true)
-           // .setImage('https://loawa.com/assets/images/chal/chal_01.jpg')
-            .addField('Inline field title', 'Some value here', true)
-            //.setImage('https://loawa.com/assets/images/chal/chal_01.jpg')
-            .addField('Inline field title', 'Some value here', true)
             .setImage('https://loawa.com/assets/images/chal/chal_01.jpg')
             .setFooter('Made by 가렌조아');
 

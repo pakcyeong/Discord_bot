@@ -1,0 +1,82 @@
+{
+    "raid" : 
+    {
+       "valtan" : {
+            "lv" : {
+                "normal" : {
+                    "recoLv" : "1415",
+                    "g1":"2500",
+                    "g2":"2500"
+                },
+                "hard" : {
+                    "recoLv" : "1445",
+                    "g1":"2500",
+                    "g2":"2500"
+                }
+            }
+       },
+       "biackiss" : {
+            "lv" : {
+                "normal" : {
+                    "recoLv" : "1430",
+                    "g1":"2500",
+                    "g2":"2500",
+                    "g3":"2500"
+                },
+                "hard" : {
+                    "recoLv" : "1460",
+                    "g":"2500"
+                }
+            }
+       },
+       "koukusaton" : {
+            "normal" : {
+                "recoLv" : "1475",
+                "g":"2500"
+            }
+       },
+       "abrelshud" : {
+            "lv" : {
+                "normal" : {
+                    "recoLv_12" : "1490",
+                    "recoLv_34" : "1500",
+                    "recoLv_56" : "1520"
+                },
+                "hard" : {
+                    "recoLv_12" : "1540",
+                    "recoLv_34" : "1550",
+                    "recoLv_56" : "1560"
+                }
+            }
+       }
+    },
+    "abyss" : {
+        "argos" : {
+            "min" : "1370",
+            "max" : "1475"
+        },
+        "oreha" : {
+            "lv" : {
+                "normal" : {
+                    "min" : "",
+                    "max" : "1415"
+                },
+                "hard" : {
+                    "min" : "",
+                    "max" : "1415"
+                }
+            }
+        }   
+    }
+}
+
+/*
+*   named:{
+*       lv:{
+*           normal: itmLv,
+*           attch_g[n]: n gold,
+*           paid_g[n]: n gold,
+*           get_itm: #
+*       }
+*   }
+*/
