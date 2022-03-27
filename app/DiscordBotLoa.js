@@ -43,6 +43,7 @@ class DiscordBotLoa extends Client {
                 });
 
         });
+
         this.on('message', function(message){
             if(message.content == "임시"){
                 const exampleEmbed = {
@@ -55,11 +56,10 @@ class DiscordBotLoa extends Client {
                 };
                 
                 channel.send({ embeds: [exampleEmbed], files: [file] });
-            }
-            else{
+            }else{
                 return;
             }
-        }
+        });
 
         this.login(process.env.TOKEN);
     }
