@@ -55,7 +55,7 @@ class DiscordBotLoa extends Client {
                     },
                 };
                 
-                channel.send({ embeds: [exampleEmbed], files: [file] });
+                message.channel.send({ embeds: [exampleEmbed], files: [file] });
             }else{
                 return;
             }
