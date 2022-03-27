@@ -43,6 +43,23 @@ class DiscordBotLoa extends Client {
                 });
 
         });
+        this.on('message', function(message){
+            if(message.content == "임시"){
+                const exampleEmbed = {
+                    title: 'Some title',
+                    image: {
+                        url: 'https://loawa.com/assets/images/chal/chal_01.jpg',
+                        url: 'https://loawa.com/assets/images/chal/chal_02.jpg',
+                        url: 'https://loawa.com/assets/images/chal/chal_03.jpg'
+                    },
+                };
+                
+                channel.send({ embeds: [exampleEmbed], files: [file] });
+            }
+            else{
+                return;
+            }
+        }
 
         this.login(process.env.TOKEN);
     }
