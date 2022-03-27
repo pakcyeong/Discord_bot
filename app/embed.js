@@ -117,22 +117,19 @@ class em extends MessageEmbed{
 
     }
 
-    // stuf = async (input, usrId) => {
+    stuf = async () => {
 
-    //     const stufEmbed = new MessageEmbed()
-    //         .setColor('#0099ff')
-    //         .setTitle('로아 인벤 사사게 검색')
-    //         .setURL(input.SasaUrl)
-    //         .addFields(
-    //             { 
-    //                 name: '사사게 검색 정보(최근 1만 게시글)', value: 
-    //                 input.SasaList
-    //             },
-    //         )
-    //         .setFooter('Made by 가렌조아');
+        const exampleEmbed = {
+            title: 'Some title',
+            image: {
+                url: 'https://loawa.com/assets/images/chal/chal_01.jpg',
+                url: 'https://loawa.com/assets/images/chal/chal_02.jpg',
+                url: 'https://loawa.com/assets/images/chal/chal_03.jpg'
+            },
+        };
         
-    //     return stufEmbed;
-    // }
+        return { embeds: [exampleEmbed], files: [file] };
+    }
 
 }
 

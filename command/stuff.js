@@ -1,23 +1,37 @@
-// const { default: axios } = require("axios");
+const axios = require('axios');
 
+class stf {
 
-// class stf {
+    /*
+    *   @url : lost ark inven community website
+    *   @param : lost ark user nickname
+    *   @return : .json
+    */
 
-//     constructor(){}
+    constructor(){}
 
-//     /*
-//     * @url: 로아 인벤 사사게 조회 사이트
-//     */
+    stuff = async (input) => {
 
-//     stuff = async (input) => {
-//         let usrId = encodeURI(input);
-//         return new Promise(function(resolve, reject){
-//             resolve(axios.get('https://www.inven.co.kr/board/lostark/5355?query=list&p=1&sterm=&name=subject&keyword=' + usrId, function(res){
-//                 if(res){ }
-//                 else{ reject('인벤 사사게 조회 중 문제가 발생하였습니다. 잠시 후, 다시 입력해주세요') }
-//             }));
-//         }) 
-//     }
-// }
+        const url = "https://www.inven.co.kr/board/lostark/5355?query=list&p=1&sterm=&name=subject&keyword=";
+        let usrId = encodeURI(input);
+        let contents = [];
 
-// module.exports = { stf };
+        return new Promise(function(resolve, reject){
+
+            url += usrId;
+            axios.get(url, function(res){
+
+            })
+
+            if(true){
+                
+            } else {
+                reject('로스트 아크 인벤 사사게에 검색되지 않은 유저 입니다.');
+            }
+        })
+
+    }
+
+}
+
+module.exports = { stf };

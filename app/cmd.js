@@ -42,7 +42,7 @@ module.exports = {
                             .catch()
                             .then();
                 break;      
-            case cmd.command[5]: //검색 complete
+            case cmd.command[5]: //검색 
                 return sch.search(input[1])
                             .then(value  => emm.fSearch(value))
                             .catch()
@@ -50,12 +50,9 @@ module.exports = {
                 break;
             //case cmd.command[6]: //샵
             //    break;
-            // case cmd.command[7]: //비매
-            //     return stff.stuff(input[1])
-            //                 .then(value => emm.stuf(value))
-            //                 .catch()
-            //                 .then();
-            //     break;
+            case cmd.command[7]: //비매
+                return emm.stuf();
+                break;
             //case cmd.command[8]: //업뎃
             //    break;
             default: //명령어가 아닌 경우
