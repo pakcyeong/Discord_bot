@@ -117,19 +117,7 @@ class em extends MessageEmbed{
 
     }
 
-    stuf = async () => {
-
-        const exampleEmbed = {
-            title: 'Some title',
-            image: {
-                url: 'https://loawa.com/assets/images/chal/chal_01.jpg',
-                url: 'https://loawa.com/assets/images/chal/chal_02.jpg',
-                url: 'https://loawa.com/assets/images/chal/chal_03.jpg'
-            },
-        };
-        
-        return { embeds: [exampleEmbed], files: [file] };
-    }
+    
 
 }
 

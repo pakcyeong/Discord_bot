@@ -1,4 +1,5 @@
 const axios = require('axios');
+const cheerio = require('cheerio');
 
 class stf {
 
@@ -13,13 +14,20 @@ class stf {
     stuff = async (input) => {
 
         const url = "https://www.inven.co.kr/board/lostark/5355?query=list&p=1&sterm=&name=subject&keyword=";
-        let usrId = encodeURI(input);
+        let usrId = input;
         let contents = [];
 
         return new Promise(function(resolve, reject){
-
-            url += usrId;
+        
+            url += encodeURI(usrId);
             axios.get(url, function(res){
+                const $ = cheerio.load(res.data);
+                const $usrClean = $('div.no-result');
+                const $usrSasage = $('div.board-list table tbody tr').eq(1).children('td.tit div.text-wrap div a');
+
+                // $usrClean.each(function(){
+                    
+                // });
 
             })
 

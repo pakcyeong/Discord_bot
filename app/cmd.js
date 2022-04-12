@@ -50,9 +50,8 @@ module.exports = {
                 break;
             //case cmd.command[6]: //샵
             //    break;
-            case cmd.command[7]: //비매
-                return emm.stuf();
-                break;
+            // case cmd.command[7]: //비매
+            //     break;
             //case cmd.command[8]: //업뎃
             //    break;
             default: //명령어가 아닌 경우
